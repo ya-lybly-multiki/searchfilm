@@ -11,9 +11,9 @@ export const filmApi = {
     getAllFilms (title:string) {
         return instance.get<ArrayFilmsType>(`${apiKey}&s=${title}`)
     },
-    getFilmByTitle (title:string) {
+    getFilmByTitle(title: string ) {
         return instance.get<FilmType>(`${apiKey}&t=${title}`)
-    }
+    },
 }
 
 export type FilmType = {

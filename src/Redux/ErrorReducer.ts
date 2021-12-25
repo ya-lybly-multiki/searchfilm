@@ -1,46 +1,42 @@
-import {Dispatch} from "react";
-import {filmApi, FilmType} from "../Api/Api";
 
 
-
-
-export type InitialState = {
- 
-    isFetching: boolean | null
+export type InitialStateType = {
+    isLoading: boolean
+    isError: string | null
+    statusGetFilms: 'success' | 'loading' | 'failed' | 'idle'
 }
 
-const Search: InitialState = {
-    isFetching: false,
+const initialState: InitialStateType = {
+    isLoading: false,
+    isError:null,
+    statusGetFilms: "idle"
 }
 
 
-export const ErrorReducer = (state = Search, action: GlobalType): InitialState => {
+export const ErrorReducer = (state = initialState, action: GlobalType): InitialStateType => {
     switch (action.type) {
-       
-        case "TOGGLE-IS-FETCHING": {
-            return {
-                ...state,
-                isFetching: action.isFetching
-            }
-        }
+        case "SET-STATUS-GET-FILMS":
+            return {...state, statusGetFilms:action.statusResponse}
+        case "STATUS-LOADING":
+            return {...state, isLoading:action.isLoad}
+        case "STATUS-ERROR":
+            return {...state,isError:action.isError}
         default :
             return state
     }
 }
 
 
+export const setStatusGetFilms = ( statusResponse: 'success' | 'loading' | 'failed' | 'idle') =>
+    ({type: 'SET-STATUS-GET-FILMS', statusResponse} as const)
 
-export const isLoading = (isFetching: boolean) => {
-    return {
-        type: "TOGGLE-IS-FETCHING",
-        isFetching
-    } as const
-}
+export const setStatusLoadingAC = (isLoad: boolean) => ({type: 'STATUS-LOADING', isLoad} as const)
+export const setErrorStatusAC = (isError: string | null) => ({type: 'STATUS-ERROR', isError} as const)
 
+export type SetStatusType = ReturnType<typeof setStatusGetFilms>
+export type LoadingType = ReturnType<typeof setStatusLoadingAC>
+export type ErrorType = ReturnType<typeof setErrorStatusAC>
 
-
-
-export type isFetchingType = ReturnType<typeof isLoading>
 
 type GlobalType =
-    | isFetchingType
+    | SetStatusType | LoadingType | ErrorType

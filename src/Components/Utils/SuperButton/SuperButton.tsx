@@ -1,13 +1,15 @@
 import React from 'react';
+import {Button} from "@mui/material";
 
 type Iprops = {
     children:string
+    callBack:()=>void
 }
 
 
-const SuperButton = ({children}:Iprops) => {
+const SuperButton = ({children,callBack}:Iprops) => {
     return (
-       <button>{children}</button>
+       <Button size={'large'} onClick={callBack}>{children}</Button>
     );
 };
 

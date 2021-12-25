@@ -1,0 +1,51 @@
+.mainWrapper {
+  background-color: #22254b;
+  height: 100vh;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+
+  li{
+    margin: 15px;
+    list-style: none;
+    h3 {
+      color: white;
+    }
+    a {
+      color: white;
+      font-size: 30px;
+    }
+  }
+}
+
+.movie {
+  width: 300px;
+  margin: 0 auto;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.overview {
+  background-color: #fff;
+  padding: 2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  transform: translateY(101%);
+  overflow-y: auto;
+  transition: transform 0.3s ease-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie:hover .overview {
+  transform: translateY(0);
+}
