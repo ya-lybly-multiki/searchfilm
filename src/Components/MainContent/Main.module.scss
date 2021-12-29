@@ -1,6 +1,5 @@
 .mainWrapper {
   background-color: #22254b;
-
 }
 
 ul {
@@ -13,10 +12,7 @@ ul {
     h3 {
       color: white;
     }
-    a {
-      color: white;
-      font-size: 30px;
-    }
+
   }
 }
 
@@ -27,6 +23,13 @@ ul {
   position: relative;
   overflow: hidden;
   border-radius: 3px;
+  a {
+    color: #3b1277;
+    font-size: 30px;
+    text-decoration: none;
+    border: 1px solid red;
+    padding: 10px;
+  }
 }
 
 .overview {

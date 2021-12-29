@@ -12,9 +12,9 @@ const FilmItem = ({film}: PropsType) => {
     return (
         <li className={s.movie}>
             <h3>{film.Title}</h3>
-            <p>{film.Year}</p>
             <img src={film.Poster}/>
             <div className={s.overview}>
+                <p>{film.Year}</p>
                 <a target={'_blank'} href={`https://www.imdb.com/title/${film.imdbID}/`}>watch</a>
             </div>
 

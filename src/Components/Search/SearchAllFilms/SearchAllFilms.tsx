@@ -5,7 +5,7 @@ import SuperButton from "../../Utils/SuperButton/SuperButton";
 import {getAllFilms} from "../../../Redux/SearchAllReducer";
 import {setErrorStatusAC} from "../../../Redux/ErrorReducer";
 import s from './SearchAllFilms.module.scss'
-import {getFilmByTitle} from "../../../Redux/SearchSingleReducer";
+
 
 
 export const SearchAllFilms = () => {
@@ -18,7 +18,6 @@ export const SearchAllFilms = () => {
         if (titleInput !== '') {
             dispatch(getAllFilms(titleInput))
             setTitleInput("")
-
         } else {
             dispatch(setErrorStatusAC('Title is Required'))
 

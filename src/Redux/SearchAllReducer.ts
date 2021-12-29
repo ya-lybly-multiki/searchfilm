@@ -45,7 +45,7 @@ export const getAllFilms = (title: string ):AppThunk => {
                 }
                 else  {
                     dispatch(setStatusGetFilms('failed'))
-                    dispatch(setErrorStatusAC('ты ищешь какую-то хуйню'))
+                    dispatch(setErrorStatusAC('incorrect request'))
                 }
             })
             .catch(() => {

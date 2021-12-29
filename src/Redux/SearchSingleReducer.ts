@@ -38,7 +38,7 @@ export const getFilmByTitle = (title: string):AppThunk => {
                     dispatch(getFilm(data.data))
                 } else  {
                     dispatch(setStatusGetFilms('failed'))
-                    dispatch(setErrorStatusAC('ты ищешь какую-то хуйню'))
+                    dispatch(setErrorStatusAC('incorrect request'))
                 }
             })
             .catch(() => {
