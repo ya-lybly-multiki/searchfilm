@@ -1,7 +1,7 @@
 import React from 'react';
 import {SearchSingleFilm} from "../Search/SearchSingleFilm/SearchSingleFilm";
 import {SearchAllFilms} from "../Search/SearchAllFilms/SearchAllFilms";
-
+import s from './Header.module.scss'
 
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
 
     return (
 
-        <header>
+        <header className={s.HeaderWrapper}>
             <SearchSingleFilm/>
             <SearchAllFilms/>
 

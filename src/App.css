@@ -1,7 +1,10 @@
 .App {
   text-align: center;
-
+  display: flex;
+  flex-direction: column;
 }
-
+:root {
+  background-color: #22254b;
+}
 
 

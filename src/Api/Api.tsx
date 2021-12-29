@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 const apiKey = '?apikey=353f5b2c'
 
 const instance = axios.create({
@@ -8,10 +7,10 @@ const instance = axios.create({
 })
 
 export const filmApi = {
-    getAllFilms (title:string) {
+    getAllFilms (title:string | null) {
         return instance.get<ArrayFilmsType>(`${apiKey}&s=${title}`)
     },
-    getFilmByTitle(title: string ) {
+    getFilmByTitle(title: string | null) {
         return instance.get<FilmType>(`${apiKey}&t=${title}`)
     },
 }

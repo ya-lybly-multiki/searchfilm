@@ -8,22 +8,24 @@ import Prealoader from "../Utils/Preloader/Prealoader";
 import {FilmType} from "../../Api/Api";
 import SingleFilmItem from "./SingleFilmItem/SingleFilmItem";
 import {InitialStateType} from "../../Redux/ErrorReducer";
+import Error from "../Error/Error";
 
 
 const Main = () => {
 
     const films = useSelector<IblobalStore, SearchFilmsType[]>(state => state.search)
-    const isFetch = useSelector<IblobalStore, string>(state => state.errorReducer.statusGetFilms)
+    const status = useSelector<IblobalStore, string>(state => state.errorReducer.statusGetFilms)
+
 
 
     return (
         <div className={s.mainWrapper}>
-            {isFetch === 'loading' ? <Prealoader/> : null}
-            {isFetch === 'success' ?
+            {status === 'loading' ? <Prealoader/> : null}
+            {status === 'success' ?
                 <main >
                     <ul>
                         {
-                            films.map((film, index) => {
+                            films?.map((film, index) => {
                                 return <FilmItem key={index} film={film}/>
                             })
                         }
@@ -31,6 +33,7 @@ const Main = () => {
                    <SingleFilmItem/>
                 </main>
                 : null}
+            {status === 'failed' ? <Error/> : null}
         </div>
     )
 };

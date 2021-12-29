@@ -1,7 +1,8 @@
 import {Dispatch} from "react";
-import {filmApi, FilmType} from "../Api/Api";
+import {filmApi} from "../Api/Api";
 import {ErrorType, setErrorStatusAC, setStatusGetFilms, SetStatusType} from "./ErrorReducer";
-import {AxiosError} from "axios";
+import { getFilmByTitle, GetFilmByTitleType} from "./SearchSingleReducer";
+import {AppThunk} from "./Store";
 
 
 export type SearchFilmsType = {
@@ -33,8 +34,8 @@ export const getFilms = (films: Array<SearchFilmsType>) => {
 }
 
 
-export const getAllFilms = (title: string ) => {
-    return (dispatch: Dispatch<GlobalType>) => {
+export const getAllFilms = (title: string ):AppThunk => {
+    return (dispatch) => {
         dispatch(setStatusGetFilms("loading"))
         filmApi.getAllFilms(title)
             .then(data => {
@@ -59,6 +60,7 @@ export type GetFilmType = ReturnType<typeof getFilms>
 
 
 type GlobalType =
-    GetFilmType
     | SetStatusType
+    | GetFilmByTitleType
+    | GetFilmType
     |ErrorType

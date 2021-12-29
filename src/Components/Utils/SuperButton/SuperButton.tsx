@@ -9,7 +9,7 @@ type Iprops = {
 
 const SuperButton = ({children,callBack}:Iprops) => {
     return (
-       <Button size={'large'} onClick={callBack}>{children}</Button>
+       <Button size={'large'} color={'inherit'} onClick={callBack}>{children}</Button>
     );
 };
 

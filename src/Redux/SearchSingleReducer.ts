@@ -1,6 +1,5 @@
-import {Dispatch} from "react";
 import {filmApi, FilmType} from "../Api/Api";
-import {getAllFilms, GetFilmType} from "./SearchAllReducer";
+import {getAllFilms,  GetFilmType} from "./SearchAllReducer";
 
 import {AppThunk} from "./Store";
 import {ErrorType, setErrorStatusAC, setStatusGetFilms, SetStatusType} from "./ErrorReducer";
@@ -49,7 +48,7 @@ export const getFilmByTitle = (title: string):AppThunk => {
     }
 }
 
-type GetFilmByTitleType = ReturnType<typeof getFilm>
+export type GetFilmByTitleType = ReturnType<typeof getFilm>
 type GlobalType =
     | SetStatusType
     | GetFilmByTitleType
