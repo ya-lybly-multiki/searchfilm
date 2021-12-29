@@ -3,7 +3,7 @@ import axios from "axios";
 const apiKey = '?apikey=353f5b2c'
 
 const instance = axios.create({
-    baseURL:"http://www.omdbapi.com/"
+    baseURL:"https://www.omdbapi.com/"
 })
 
 export const filmApi = {
