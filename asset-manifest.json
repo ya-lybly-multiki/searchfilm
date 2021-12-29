@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/searchfilm/static/css/main.7df211fd.chunk.css",
+    "main.js": "/searchfilm/static/js/main.5e44339a.chunk.js",
+    "main.js.map": "/searchfilm/static/js/main.5e44339a.chunk.js.map",
+    "runtime-main.js": "/searchfilm/static/js/runtime-main.6c9600ab.js",
+    "runtime-main.js.map": "/searchfilm/static/js/runtime-main.6c9600ab.js.map",
+    "static/js/2.dd2db205.chunk.js": "/searchfilm/static/js/2.dd2db205.chunk.js",
+    "static/js/2.dd2db205.chunk.js.map": "/searchfilm/static/js/2.dd2db205.chunk.js.map",
+    "static/js/3.87be4a4b.chunk.js": "/searchfilm/static/js/3.87be4a4b.chunk.js",
+    "static/js/3.87be4a4b.chunk.js.map": "/searchfilm/static/js/3.87be4a4b.chunk.js.map",
+    "index.html": "/searchfilm/index.html",
+    "static/css/main.7df211fd.chunk.css.map": "/searchfilm/static/css/main.7df211fd.chunk.css.map",
+    "static/js/2.dd2db205.chunk.js.LICENSE.txt": "/searchfilm/static/js/2.dd2db205.chunk.js.LICENSE.txt",
+    "static/media/Spinner-1s-200px.7f937069.svg": "/searchfilm/static/media/Spinner-1s-200px.7f937069.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6c9600ab.js",
+    "static/js/2.dd2db205.chunk.js",
+    "static/css/main.7df211fd.chunk.css",
+    "static/js/main.5e44339a.chunk.js"
+  ]
+}
